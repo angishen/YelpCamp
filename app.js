@@ -12,6 +12,15 @@ app.get("/", function(req, res){
 var campgrounds = [
     { name: "Angel's Landing", image: "https://upload.wikimedia.org/wikipedia/commons/1/10/Zion_angels_landing_view.jpg"},
     { name: "Bridalveil Creek", image: "https://www.nps.gov/yose/planyourvisit/images/IMG_6796edit.jpg?maxwidth=650&autorotate=false"},
+    { name: "Hetch Hetchy", image: "https://www.nps.gov/yose/planyourvisit/images/Pg_15_HetchHetchy_CreditClarisaFlores.jpg?maxwidth=1200&maxheight=1200&autorotate=false"},
+    { name: "Angel's Landing", image: "https://upload.wikimedia.org/wikipedia/commons/1/10/Zion_angels_landing_view.jpg"},
+    { name: "Bridalveil Creek", image: "https://www.nps.gov/yose/planyourvisit/images/IMG_6796edit.jpg?maxwidth=650&autorotate=false"},
+    { name: "Hetch Hetchy", image: "https://www.nps.gov/yose/planyourvisit/images/Pg_15_HetchHetchy_CreditClarisaFlores.jpg?maxwidth=1200&maxheight=1200&autorotate=false"},
+    { name: "Angel's Landing", image: "https://upload.wikimedia.org/wikipedia/commons/1/10/Zion_angels_landing_view.jpg"},
+    { name: "Bridalveil Creek", image: "https://www.nps.gov/yose/planyourvisit/images/IMG_6796edit.jpg?maxwidth=650&autorotate=false"},
+    { name: "Hetch Hetchy", image: "https://www.nps.gov/yose/planyourvisit/images/Pg_15_HetchHetchy_CreditClarisaFlores.jpg?maxwidth=1200&maxheight=1200&autorotate=false"},
+    { name: "Angel's Landing", image: "https://upload.wikimedia.org/wikipedia/commons/1/10/Zion_angels_landing_view.jpg"},
+    { name: "Bridalveil Creek", image: "https://www.nps.gov/yose/planyourvisit/images/IMG_6796edit.jpg?maxwidth=650&autorotate=false"},
     { name: "Hetch Hetchy", image: "https://www.nps.gov/yose/planyourvisit/images/Pg_15_HetchHetchy_CreditClarisaFlores.jpg?maxwidth=1200&maxheight=1200&autorotate=false"}
 ];
 
