@@ -34,6 +34,7 @@ router.post("/", isLoggedIn, function(req, res){
     var newCampground = {name: name, image: image, description: desc, author: author};
     // create a new campground and save to db
     Campground.create(newCampground, function(err, campground){
+        console.log(req.params.id);
         if (err) {
             console.log(err);
         } else {
@@ -42,6 +43,30 @@ router.post("/", isLoggedIn, function(req, res){
         }
     });
     
+});
+
+// EDIT ROUTE
+router.get("/:id/edit", function(req, res){
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if (err) {
+            console.log(err);
+            res.redirect("/");
+        } else {
+            res.render("campgrounds/edit", {campground: foundCampground});
+        }
+    });
+});
+
+// UPDATE ROUTE
+router.put("/:id", function(req, res){
+   Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
+       if (err) {
+           console.log(err);
+           res.redirect("/campgrounds");
+       } else {
+           res.redirect("/campgrounds/" + req.params.id);
+       }
+   }); 
 });
 
 // SHOW route
@@ -64,6 +89,5 @@ function isLoggedIn(req, res, next){
     }
     res.redirect("/login");
 }
-
 
 module.exports = router;
