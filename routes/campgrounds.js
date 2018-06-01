@@ -70,7 +70,7 @@ router.put("/:id", checkCampgroundOwnership, function(req, res){
    Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
        if (err) {
            console.log(err);
-           res.redirect("/campgrounds");
+           res.redirect("back");
        } else {
            res.redirect("/campgrounds/" + req.params.id);
        }
