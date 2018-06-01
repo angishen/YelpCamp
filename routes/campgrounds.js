@@ -37,9 +37,9 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     Campground.create(newCampground, function(err, campground){
         console.log(req.params.id);
         if (err) {
-            console.log(err);
+            req.flash("error", "Something went wrong!")
         } else {
-            // redirect to campgrounds page
+            req.flash("success", "Successfully added campground!")
             res.redirect("/campgrounds");
         }
     });
@@ -85,6 +85,7 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
             console.log(err);
             res.redirect("/campgrounds");
         } else {
+            req.flash("success", "Campground successfully deleted.")
             res.redirect("/campgrounds");
         }
     });
