@@ -45,6 +45,19 @@ router.post("/", isLoggedIn, function(req, res){
     
 });
 
+// SHOW route
+router.get("/:id", function(req, res){
+    // find campground with provided ID
+    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
+        if (err) {
+            console.log(err);
+        } else {
+            // render the show template
+            res.render("campgrounds/show", {campground: foundCampground});
+        }
+    });
+});
+
 // EDIT ROUTE
 router.get("/:id/edit", function(req, res){
     Campground.findById(req.params.id, function(err, foundCampground){
@@ -69,15 +82,14 @@ router.put("/:id", function(req, res){
    }); 
 });
 
-// SHOW route
-router.get("/:id", function(req, res){
-    // find campground with provided ID
-    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
+// DELETE ROUTE
+router.delete("/:id", function(req, res){
+    Campground.findByIdAndRemove(req.params.id, function(err){
         if (err) {
             console.log(err);
+            res.redirect("/campgrounds");
         } else {
-            // render the show template
-            res.render("campgrounds/show", {campground: foundCampground});
+            res.redirect("/campgrounds");
         }
     });
 });
