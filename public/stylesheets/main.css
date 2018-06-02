@@ -13,3 +13,7 @@
 .delete-form {
     display: inline;
 }
+
+.form-signin-heading {
+    text-align: center;
+}

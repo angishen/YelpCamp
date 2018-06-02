@@ -1,6 +1,5 @@
 body {
     background-color: #000;
-    
 }
 
 #landing-header {
@@ -75,4 +74,9 @@ body {
   30% {
     opacity: 0
   }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
 }
